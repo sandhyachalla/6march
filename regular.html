@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function validate(){
+			var username=document.getElementById("username").value
+			var email=document.getElementById("email").value
+			var mobile=document.getElementById("mobile").value
+			var emailCheck=/^[A-Za-z0-9#*&!]+@[a-zA-Z]+\.[a-z]{2,3}$/
+			var UserNameCheck=/^[a-zA-Z ]+$/
+			var mobileCheck=/^[6-9][0-9]{9}$/
+				if(username==""||username.length<3){
+					alert("please check your username")
+					return false
+				}
+				if(!username.match(UserNameCheck)){
+					alert("Name must carry only characters")
+					return false
+				}if(email==""||email.length<3){
+					alert("please check email")
+					return false
+				}
+				if(!email.match(emailCheck)){
+					alert("Enter the email correctly")
+					return false
+				}
+				if(mobile==""){
+					alert("enter email correctly,it shouldn't be empty")
+
+					return false
+				}
+				if(!mobile.match(mobileCheck))
+					alert("enter mobile no correctly")
+					return true
+			
+
+			
+		}
+	</script>
+</head>
+<body>
+	<form onsubmit="return validate()">
+		<p><input type="text"  placeholder="username" id="username"></p>
+		<p><input type="text" placeholder="email" id="email"></p>
+		<p><input type="text" placeholder="password" id="pwd" ></p>
+		<p><input type="number" placeholder="Mobilenumber" id="mobile"></p>
+		<p><button>Next</button></p>
+	</form>
+
+</body>
+</html>
